@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Juhee_</title>
+
+    
+</head>
+<style>
+	* {margin:0;padding:0; }
+    body{width:100%;overflow-x:hidden;}
+
+	/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+        .section .slidewrap {max-width:830px;margin:0 auto;overflow:hidden; margin-left: 290px; padding-top: 140px;}
+	.section .slidelist {white-space:nowrap;font-size:0;}
+	.section .slidelist > li {display:inline-block;vertical-align: middle;width:100%;transition:all .5;}
+	.section .slidelist > li > a {display:block;position:relative;}
+	.section .slidelist > li > a img {width:100%;}
+
+	/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+	.section .slidelist label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+	.section .slidelist .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
+	.section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
+
+	/* INPUT 체크되면 변화값이 li까지 전달되는 스타일 */
+	.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+    .bfont{
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #222222;
+    }
+
+    .body{
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700; margin-top: 70px; padding-left: 220px;
+        font-size: 22pt; color: #0151A6;}
+
+    .bodytitle{
+        image-rendering: -moz-crisp-edges;         /* Firefox */
+        image-rendering: -o-crisp-edges;         /* Opera */
+        image-rendering: -webkit-optimize-contrast;/* Webkit 표준 X */
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor;  /* IE 표준 X */
+        height: 280px;
+        width: 102%;
+        background-image : url(https://i.postimg.cc/DzW01LJB/Frame-34.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bodytitle3{
+
+        height: 320px;
+        width: 100%;
+        background-image : url(https://i.postimg.cc/SNgrjf75/image.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 1400px;
+    }
+    .bodytitle img{
+        padding-top: 40px;
+        margin-left: 210px;
+    }
+
+    .font{font-family: 'Abril Fatface', cursive;
+        color: white; font-size: 155pt; font-weight: 500;
+        padding-left: 210px; padding-top: 290px; }
+    .font2{
+        font-family: 'Noto Sans KR', sans-serif;
+        color: rgb(255, 255, 255);font-size: 19pt;
+        padding-left: 220px;  }
+    .body{
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700; margin-top: 70px; padding-left: 220px;
+        font-size: 22pt; color: #0151A6;}
+    #menu{
+        font-family: 'Noto Sans KR', sans-serif;
+        list-style: none;
+        float: right;
+        padding-right: 220px; padding-top: 230px;
+        font-size: 20px;font-weight: 500;}
+        
+    #menu li {
+        float: left;
+    }
+    #menu li a{
+        padding-left:  90px; padding-right: 20px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    .two{
+        position: absolute; 
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 20px; font-weight: 600; text-decoration: none; padding-left: 1867px;
+        padding-top: 225px; color: #0151A6;
+    }
+    .last{
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #000000;
+            padding-left: 80px; padding-top: 100px;
+            position: absolute;
+            display: inline inline-block;
+            width: 1061px;
+            height: 705.5px;
+            margin-top: 1.5px;
+            margin-left: 800px;
+        }
+    .body{
+        font-size: 26pt; 
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700; padding-left: 270px; padding-bottom: 16px; color: #0151A6;}   
+    .body2{
+        font-size: 18pt; 
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 200;  padding-left: 130px; color: #505050;}   
+
+        .designThing{
+                font-family: 'Noto Sans KR', sans-serif;
+				background-color: rgb(255, 255, 255);
+				border-radius: 5px;
+				margin-bottom: 70px;
+				padding: 10px;
+				width: 505px;
+                height: 550px;
+			}
+
+			.designThing .poster{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+                box-shadow: 10,10,5,5,#333333;
+			}
+
+    .card-1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+
+    .card-1:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+</style>
+<body>
+    <ul id="menu">
+        <li><a href="dolphin.html">초특가</a></li>
+        <li><a href="activity.html">액티비티</a></li>
+        <li><a href="https://www.guamplay.com/?pn=product.list&cuid=97">판매/렌탈</a></li>
+        <li><a style="opacity: 0;">여행정보</a></li>
+    </ul>
+
+    <div class="bodytitle">
+        <div style=" position: absolute; padding-left: 1620px; padding-top: 165px;">
+            <img src="https://i.postimg.cc/W4xn7pdP/Rectangle-30.png" style="width: 45%;">
+        </div>
+        <div class="two"><a>여행정보</a></div>
+            <a href="index.html"><img src="https://i.postimg.cc/dDP8fChT/logo.png" alt="image1"></a>
+        </div>
+
+
+
+
+        <p class="body">방문 후기</p>
+
+        <div class="bfont" style="margin-top: 20px;">
+            <div class="designThing card-1" style="float: left; margin-left: 270px; ">
+                <img class="poster" src="https://i.postimg.cc/d165QVZG/Frame-19.png" width="100%">
+                <h2 style="padding-left: 10px; font-size: 24pt;">정글 리버 보트</h2>
+                <p style="padding-left: 10px; margin-top: 20px; font-size:14pt;">보트를 탈 수 있는 경험도 많이 없는데 좋은 경험이 된것 같아요~ 가족들과 좋은 추억 쌓고 잘 놀다가요~</p>
+
+            </div>
+    
+            <div class="designThing card-1" style="float: left; margin-left: 50px;">
+                <img class="poster" src="https://i.postimg.cc/cLqkmHYB/image.png" width="100%">
+                <h2 style="padding-left: 10px; font-size: 24pt;">돌핀 선셋 크루즈</h2>
+                <p style="padding-left: 10px; margin-top: 20px; font-size:14pt;">남편이랑 신혼여행으로 왔는데 돌고래도 보고 특별한 추억이 된 것 같습니다 : 나중에 가족들이랑도 오고싶어요.</p>
+
+            </div>
+            <div class="designThing card-1" style="float: left; margin-left: 50px;">
+                <img class="poster" src="https://i.postimg.cc/J0v6S7Fm/image.png" width="100%">
+                <h2 style="padding-left: 10px; font-size: 24pt;">스카이다이빙</h2>
+                <p style="padding-left: 10px; margin-top: 20px; font-size:14pt;">스카이다이빙 완전 강추!!친구랑 할까말까 너무 고민했는데 ㅋㅋㅋ안했으면 진심 후회 엄청할뻔...다들 꼭 하세요 완전 안무섭고 강사님도 잘 알려주시고 새로운 경험이 되는 것 같아용!</p>
+
+            </div>
+        </div>
+        
+        <div class="bfont" style="margin-top: 120px;">
+            <div class="designThing card-1" style="float: left; margin-left: 270px; ">
+                <img class="poster" src="https://i.postimg.cc/KYNKGxTy/image.png" width="100%">
+                <h2 style="padding-left: 10px; font-size: 24pt;">야경 별빛투어</h2>
+                <p style="padding-left: 10px; margin-top: 20px; font-size:14pt;">별이 너무 많아요. 마치 우수수 쏟아질것 같은,</p>
+
+            </div>
+    
+            <div class="designThing card-1" style="float: left; margin-left: 50px;">
+                <img class="poster" src="https://i.postimg.cc/HLBxG3GY/image.png" width="100%">
+                <h2 style="padding-left: 10px; font-size: 24pt;">리조나레 리조트 골프패키지</h2>
+                <p style="padding-left: 10px; margin-top: 20px; font-size:14pt;">해외에서 치는 골프가 제맛이죠.. <br>맑고 깨끗한 하늘보면서 참 좋았습니다. <br> 다음에 또 오게되면 좋겠어요 .^^</p>
+
+            </div>
+            <div class="designThing card-1" style="float: left; margin-left: 50px;">
+                <img class="poster" src="https://i.postimg.cc/MKnqXxC8/image.png" width="100%">
+                <h2 style="padding-left: 10px; font-size: 24pt;">익스트림 버키카</h2>
+                <p style="padding-left: 10px; margin-top: 20px; font-size:14pt;">길이 울퉁불퉁해서 처음에 무서웠는데 운전하면 할수록 스릴넘쳐서 막 달렸네요 ㅋㅋㅋ 제대로 코스 들어가기전에 연습도 시켜줘서 안전하게 진행했습니다. 중간에 바다쪽에 뷰포인트에서 잠시 쉬어가는데 너무 이뻤어요 ! 사진도 잘 찍어주시고 가이드...</p>
+
+            </div>
+        </div>
+        
+        <div class="bodytitle3"></div>
+
+</body>
+</html>
+
+

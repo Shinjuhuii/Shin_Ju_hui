@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Juhee_</title>
+</head>
+<style>
+	* {margin:0;padding:0; font-family: 'Noto Sans KR', sans-serif; }
+    .bfont{
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #222222;
+        
+    }
+
+.section input[id*="slide"] {display:none;}
+
+/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+.section .slidewrap {max-width:1000px;margin:0 auto;overflow:hidden; margin-left: 0px;}
+.section .slidelist {white-space:nowrap;font-size:0;}
+.section .slidelist > li {display:inline-block;vertical-align: middle;width:100%;transition:all .5;}
+.section .slidelist > li > a {display:block;position:relative;}
+.section .slidelist > li > a img {width:100%;}
+
+/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+.section .slidelist label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+.section .slidelist .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
+.section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
+
+/* INPUT 체크되면 변화값이 li까지 전달되는 스타일 */
+.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+    .card-1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+
+    .card-1:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    .bodytitle{
+        height: 990px;
+        width: 100%;
+        background-image : url(https://i.postimg.cc/rF344RXx/title.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bodytitle2{
+        height: 400px;
+        width: 100%;
+        background-image : url(https://i.postimg.cc/bYMbHg3n/image.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bodytitle3{
+        height: 320px;
+        width: 100%;
+        background-image : url(https://i.postimg.cc/fyjDRXjB/Frame-18.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bodytitle img{
+        padding-top: 40px;
+        margin-left: 210px;
+    }
+
+    .font{font-family: 'Abril Fatface', cursive;
+        color: white; font-size: 150pt;
+        padding-left: 210px; padding-top: 375px; }
+    .font2{
+        font-family: 'Noto Sans KR', sans-serif;
+        color: white;font-size: 19pt;
+        padding-left: 220px;  }
+    .body{
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700; margin-top: 70px; padding-left: 220px;
+        font-size: 22pt; color: #0151A6;}
+    #menu{
+        font-family: 'Noto Sans KR', sans-serif;
+        list-style: none;
+        float: right;
+        padding-right: 220px; padding-top: 40px;
+        font-size: 20px;font-weight: 500;}
+    #menu li {
+        float: left;
+    }
+    #menu li a{
+        padding-left:  90px; padding-right: 20px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    #menu li a:hover {
+        margin-left: 70px;
+        padding-left:20px;
+        padding-right:20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+        color: rgb(6, 6, 117);
+        font-weight: 700;
+    }
+    .pouplar{
+        padding-left: 220px;
+    }
+
+    .info{ width: 800px;padding-left: 220px;margin-top: 20px; }
+        .info a{
+            border:2px solid white;
+            width: 200px; height: 60px;
+            text-decoration: none;
+            color:white; padding: 15px 60px;
+            font-size: 20px; }
+        
+        .hlper{
+            font-family: 'Noto Sans KR', sans-serif;
+            display: inline-block; vertical-align: middle;height: 100%; 
+        }
+
+        li{list-style: none;}
+        a{text-decoration: none; color : inherit;}
+        img{vertical-align: top;}
+        .wrap{background:#282828; height: 480px; 
+        display :flex; justify-content: center; align-items: center;}
+
+        .card{width: 375px; height: 480px; overflow:hidden; position: relative; background-color: ;}
+        .card .img{transform: scale(1.15); object-fit: cover;
+        transition: opacity 0.5s, transform 1s;}
+        .card:hover .img{transform: scale(1); opacity: 0.5;}
+
+        .text{position: absolute; top:0;left:0;width:100;
+            height:100% ;text-align: center; 
+            color: #fff; display: flex; align-items:center; 
+            justify-content: center; flex-direction: column; padding: 10px;}
+        .text h2{text-transform: uppercase;
+            text-shadow: 1px 1px 10px rgba(0,0,0,.5); 
+            margin-bottom: 10px; transform: translateY(20px); transition:all 0.5s; opacity: 0;}
+        .text p{font-size:14px; transform: translateY(20px); transition:all 0.5s;
+        opacity: 0;}
+
+        .card:hover .text h2{transform: translateY(0); opacity: 1;}
+        .card:hover .text p{transform: translateY(0); opacity: 1;}
+
+    .designThing{
+                font-family: 'Noto Sans KR', sans-serif;
+				background-color: rgb(255, 255, 255);
+				border-radius: 10px;
+				margin-bottom: 70px;
+				padding: 10px;
+				width: 505px;
+                height: 490px;
+			}
+
+			.designThing .poster{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+                box-shadow: 10,10,5,5,#333333;
+			}
+        .last{
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #fff;
+            padding-left: 80px; padding-top: 100px;
+            position: absolute;
+            display: inline inline-block;
+            background-color: #1E3670;
+            width: 1061px;
+            height: 705.5px;
+            margin-top: 1.5px;
+            margin-left: 800px;
+        }
+
+</style>
+<body>
+    <ul id="menu">
+        <li><a href="dolphin.html">초특가</a></li>
+        <li><a href="activity.html">액티비티</a></li>
+        <li><a href="https://www.guamplay.com/?pn=product.list&cuid=97">판매/렌탈</a></li>
+        <li><a href="infor.html">여행정보</a></li>
+    </ul>
+
+    <div class="bodytitle">
+            <a href="index.html"><img src="https://i.postimg.cc/dDP8fChT/logo.png" alt="image1"></a>
+            <p class="font">Guam<br></p>
+            <p class="font2  font-weight: 100;">Guam Play is for everyone who travels<br>
+                It can provide new experiences and leave deep memories.</p>
+    </div>
+    <p class="body">가장 인기있는 <br> 하이라이트 명소</p>
+    <div class="pouplar" style="margin-top:70px;">
+
+        <div class="wrap" style="float: left; margin-right: 60px;">
+            <div OnClick="location.href ='http://URL주소'" style= cursor:pointer; class="card">
+                <img src="https://i.postimg.cc/G2BBFpX8/Frame-8.png" class="img">
+                <div class="text" style="padding-left: 70px;">
+                    <h2>리조나레 망길라오 & <br>탈로포포 3박 4일 골프팩</h2>
+                    <p>RISONARE GOLF PACK <br>리조나레 리조트 골프팩 파격특가</p>
+    
+                </div>
+            </div>
+            <div style="height: 700px; padding-top: 200px;"> <img src="https://i.postimg.cc/L6Gt2p7h/Frame-15.png"> </div>
+            <div class="card" >
+                <img src="https://i.postimg.cc/Xq8s9xHY/Frame-7.png" class="img">
+                <div OnClick="location.href ='car.html'" style= "cursor:pointer; padding-left: 100px;" class="text">
+                    <h2>익스트림 버기카</h2>
+                    <p>괌의 자연에서 익스트림을 즐기자</p>
+    
+                </div>
+            </div>
+            <div style="height: 700px; padding-top: 200px;"> <img src="https://i.postimg.cc/L6Gt2p7h/Frame-15.png"> </div>
+            <div OnClick="location.href ='http://URL주소'" style= cursor:pointer; class="card">
+                <img src="https://i.postimg.cc/50HxgB27/43.png" class="img">
+                <div OnClick="location.href ='night.html'" style= "cursor:pointer; padding-left: 50px;" class="text">
+                    <h2>리티디안 야경 별빛투어</h2>
+                    <p>리티디안 비치에서 펼쳐지는 #야경투어 #별빛투어</p>
+    
+                </div>
+            </div>
+            <div style="height: 700px; padding-top: 200px;"> <img src="https://i.postimg.cc/L6Gt2p7h/Frame-15.png"> </div>
+            <div OnClick="location.href ='golf.html'" style= "cursor:pointer; "class="card">
+                <img src="https://i.postimg.cc/QMzDFFJp/Frame-14.png" class="img">
+                <div OnClick="location.href ='dolphin.html'" style= "padding-left:20px;"  class="text">
+                    <h2>패밀리비치 원데이팩 <br>(돌핀크루즈+제트스키+체험스쿠버)</h2>
+                    <p>돌핀크루즈와 해양스포츠를 한번에~</p>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bodytitle2" style="margin-top:700px; clear:both;">
+        <p style=" font-family: 'Noto Sans KR', sans-serif;
+        color: white; font-size: 70pt; font-weight: 800; padding-left: 220px; padding-top: 70px;">Dolphin Cruise</p>
+        <p class="font2 font-weight 300;">괌바다에서 서식하는 귀여운 돌고래를 만나보세요!</p>
+        <div>
+            <div class="hlper"></div><div class="info">
+                <a href="dolphin.html"><b>구경하기</b></a>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <p class="body">괌에서 다양한 <br>액티비티를 즐겨보세요</p>
+    <p style="font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color:#6A6A6A; padding-top: 10px; margin-left: 220px; margin-bottom: 30px;">
+        미리 예약하면 더욱 저렴한 가격에 즐기실 수 있습니다.</p>
+    <br>
+    <br>
+    <div class="bfont">
+        <div class="designThing card-1" style="float: left; margin-left: 210px; ">
+			<img class="poster" src="https://i.postimg.cc/d165QVZG/Frame-19.png" width="100%">
+            <h2 style="padding-left: 10px; font-size: 24pt;">정글 리버 보트</h2>
+            <p style="padding-left: 10px;">정글과 원주민 마을을 동시에 탐험하자!</p>
+            <p style="margin-left: 330px;"><b style="text-decoration: line-through; color: 
+            red; font-size: 20px;">$119</b><b style="font-size: 50px;">$110</b></p>
+		</div>
+
+        <div class="designThing card-1" style="float: left; margin-left: 90px;">
+			<img class="poster" src="https://i.postimg.cc/cLqkmHYB/image.png" width="100%">
+            <h2 style="padding-left: 10px; font-size: 24pt;">돌핀 선셋 크루즈</h2>
+            <p style="padding-left: 10px;">돌핀+호핑+선셋을 한번에~</p>
+            <p style="margin-left: 360px;"><b style="text-decoration: line-through; color: 
+            red; font-size: 20px;">$85</b><b style="font-size: 50px;">$75</b></p>
+		</div>
+        <div class="designThing card-1" style="float: left; margin-left: 90px;">
+			<img class="poster" src="https://i.postimg.cc/J0v6S7Fm/image.png" width="100%">
+            <h2 style="padding-left: 10px; font-size: 24pt;">스카이다이빙</h2>
+            <p style="padding-left: 10px;">하늘에서 환상적인 괌을 즐겨보세요!</p>
+            <p style="margin-left: 330px;"><b style="text-decoration: line-through; color: 
+            red; font-size: 20px;">$311</b><b style="font-size: 50px;">$299</b></p>
+		</div>
+    </div>
+
+
+    <div style="margin-bottom: 80px;"> <img src="https://i.postimg.cc/HxrHDnLP/ddd.png" alt=""></div>
+    
+	<div class="section" style="clear:both">
+		<input type="radio" name="slide" id="slide01" checked>
+		<input type="radio" name="slide" id="slide02">
+		<input type="radio" name="slide" id="slide03">
+
+        <div class="last" style="margin-left: 1000px;"> <p style="font-size: 40pt; font-weight: 300; margin-top: 50px;" >힐링의 섬 괌, <br> 연인과 함께 <br> 가족과 함께하는 곳 입니다.</p> 
+            <p style="font-size: 20pt; font-weight: 200;margin-top: 30px;">괌플레이는 여행을 떠나는 모든 사람들에게 <br>
+                새로운 경험을 제공하고 깊은 추억을 남길 수 있습니다.</p> 
+                <div>
+                    <div class="hlper2"></div><div class="info" style="padding-left: 2px; padding-top: 40px;">
+                        <a href="https://www.skyscanner.co.kr/?&utm_source=google&utm_medium=cpc&utm_campaign=KR-
+                        Flights-Search-KO-Generics-Broad&utm_term=%2B%EB%B9%84%ED%96%89%EA%B8%B0+%2B%EC%98%88%EC%
+                        95%BD&associateID=SEM_GGF_19370_00080&gclid=Cj0KCQjw1rqkBhCTARIsAAHz7K1026ABHagax7TM5z1po
+                        EY8PmZ9oUsfHK40Jdt4LGDnVaUqZvoVhdsaAsx8EALw_wcB&gclsrc=aw.ds"><b>항공표 예약하기</b></a>
+                    </div>
+                </div>
+            </div>
+		<div class="slidewrap">
+			<ul class="slidelist">
+				<li>
+					<a>
+						<label for="slide03" class="left"></label>
+						<img src="https://i.postimg.cc/sggYrCpZ/222222.png">
+						<label for="slide02" class="right"></label>
+					</a>
+				</li>
+				<li>
+					<a>
+						<label for="slide01" class="left"></label>
+						<img src="https://i.postimg.cc/xT0HvVpF/3434343.png">
+						<label for="slide03" class="right"></label>
+					</a>
+				</li>
+				<li>
+					<a>
+						<label for="slide02" class="left"></label>
+						<img src="https://i.postimg.cc/hvMXyhZZ/dfdfdfdf.png">
+						<label for="slide01" class="right"></label>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+
+<div class="bodytitle3"></div>
+</body>
+</html>
+
+
